@@ -13,6 +13,12 @@ contract FFCashToken is MintableToken{
     constructor() public payable {
     }
     
+    // 매니저 = owner
+
+    // approve는 토큰 소유자가 메소드를 실행하고 spender에는 소유자 대신 토큰을 전송할 사람 주소, amount에는 위임할 토큰 양 
+    // approve(address _spender, uint _amount)
+    
+
     // 처음 회원가입시 매니저가 캐시토큰을 사용자에게 지급한다. 컨트랙트는 매니저가 실행하고(msg.sender), _user에는 새로 가입한 회원의 주소가 들어간다. 
     function initUserCashToken(address _user, uint _amount) public {
         mint(_user, _amount);
